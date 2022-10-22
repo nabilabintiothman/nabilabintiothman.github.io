@@ -1,0 +1,669 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+/*Custom properties, update these for your own design*/
+
+:root {
+    --ff-primary: 'Poppins', sans-serif;
+    --ff-secondary: 'Source Sans Pro', sans-serif;
+    --ff-tertiary: 'Source Code Pro', monospace; 
+    --ff-Mali: 'Mali', cursive;
+    --ff-Roboto: 'Roboto', sans-serif;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #16e0bd;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0, .25), 
+          0.125em 0.125em 0.25em rgba(0,0,0, .15); /*increase realism of the shadown by having these two*/
+
+    --color-primary: #191d2b;
+    --color-secondary: #27AE60;
+    --color-white: #FFFFFF;
+    --color-black: #000;
+    --color-grey0: #f8f8f8;
+    --color-grey-1: #dbe1e8;
+    --color-grey-2: #b2becd;
+    --color-grey-3: #6c7983;
+    --color-grey-4: #454e56;
+    --color-grey-5: #2a2e35;
+    --color-grey-6: #12181b;
+    --color-brown-1: #c4b7a6;
+    --color-brown-2: #e6e2d3;
+    --color-brown-3: #dac292;
+    --color-blue-1: #bccad6;
+    --color-blue-2: #8d9db6;
+    --color-blue-3: #667292;
+    --br-sm-2: 14px;
+
+}
+
+/*using media queries make the font size changes according to screen size*/
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.0rem;
+    }
+}
+
+
+/*Gneral styles*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("https://i.pinimg.com/564x/98/3e/1f/983e1f403d53172ceb3cbaf2b14c948b.jpg"); 
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-body);
+    line-height: 1.5; /*line spacing between sentences*/
+}
+
+section, header {
+    padding: 3em 3em; /*the spacing between each section*/
+}
+
+img {
+    display: block;  /*get rid of issues that sometimes come up with images */
+    max-width: 100%; /*so it doesnt grow bigger and overflow at the side of their parent*/
+    
+}
+
+strong { font-weight: var(--fw-bold) }
+
+/*Typography*/
+
+h1,
+h2,
+h3 {
+    line-height: 1.0;
+    margin: 0;
+}
+
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+
+.controlls{
+    position: fixed;
+    z-index: 10;
+    top: 30%;  
+    right: 3%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);}
+
+
+    .control{
+        padding:1rem;
+        cursor: pointer;
+        background-color: var(--color-grey-4);
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;  
+        align-items: center;
+        margin: 0.7rem 0;  
+        box-shadow: var(--bs);}
+
+        i{
+            font-size: 1.2rem;
+            color: var(--color-grey-2);
+            pointer-events: none; 
+        }
+
+    
+    .active-btn {
+        background-color: var(--color-secondary);
+        transition: all 0.4s ease-in-out;}
+
+        i{
+        color: var(--color-white);
+        }
+
+    .control:hover {
+        background-color: var(--color-secondary);
+        opacity: .5;
+    }
+
+
+
+/*Independent components for download resume button*/
+.btn-con__resume{
+    background-color: var(--color-blue-1);
+    display: flex;
+    align-self: flex-start;
+    padding: 2rem;
+    justify-content: center;
+    cursor: pointer;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.btn-con__githubproject{
+    display: flex;
+    align-self: flex-start;
+    padding: 2rem;
+    justify-content: center;
+    cursor: pointer;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.main-btn__resume{
+    box-shadow: var(--bs);
+    border-radius: 30px;
+    color: var(--clr-dark);
+    background-color: var(--clr-light);
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--color-secondary);
+    display: flex;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    overflow: hidden
+
+}
+
+.main-btn__resume:hover {
+    color: var(--clr-accent);
+    transform: scale(1.2);
+}
+
+    .btn-text__resume{
+        padding: 0 2rem;
+    }
+
+    .btn-text__githubproject{
+        padding: 0 0.5rem;
+    }
+
+    .btn-icon__resume{
+        padding-right: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    
+
+
+    /*Independent components for all my projects button*/
+.btn-con__projects{
+    display: flex;
+    align-self: flex-start;
+    padding: 2rem;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.main-btn__projects{
+    border-radius: 30px;
+    color: var(--clr-dark);
+    background-color: var(--clr-light);
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--color-secondary);
+    display: flex;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    overflow: hidden}
+
+.main-btn__projects:hover {
+    color: var(--clr-accent);
+    transform: scale(1.2);
+}
+
+    .btn-text__projects{
+        padding: 0 2rem;
+    }
+    .btn-icon__projects{
+        padding-right: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .blackiconcolor {color:black;}
+
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+
+
+/*intro section*/
+
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.section__title--intro strong {
+    display: block;  /*words nested inside strong will be in another line*/
+}
+
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro {   
+    background: var(--clr-accent);
+    padding: 0.5em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.section__subtitle--projects {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+
+.intro {
+    position: relative;
+    padding: 0 2em 2em;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+    margin-top: 1rem;
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+
+@media (min-width: 600px) {
+    .intro {
+        padding-top: 5rem;
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+    
+    .intro__img {
+        grid-area: img;
+        min-width: 300px;
+        position: relative;
+        z-index: 2;
+    }  
+    
+    .section__title--intro {
+        font-weight: var(--fw-reg);
+        text-align: left;
+    }
+    
+    .section__subtitle--intro {
+        display: inline-block; 
+        min-width: 490px; 
+        text-align: left;
+
+    }
+
+    .social-list{
+        justify-content: center; 
+        display: flex; 
+    }
+    
+    .social-list__item {
+        background: var(--color-blue-3);
+        color: var(--clr-accent);
+        text-align: center;
+        padding:0.5rem;
+        cursor: pointer;
+        width: 45px;
+        height: 35px;
+        border-radius: 10%;
+        justify-content: center;  
+        align-items: center;
+        margin: 0 1rem;  
+        box-shadow: var(--bs);
+        }
+    
+    
+    .social-list__link:hover,
+    .social-list__item:hover {
+        opacity: .5;
+    }
+
+    
+}
+
+.social-list{
+    justify-content: center; 
+    display: flex; 
+}
+
+.social-list__item {
+    background: var(--color-blue-3);
+    color: var(--clr-accent);
+    text-align: center;
+    padding:0.5rem;
+    cursor: pointer;
+    width: 45px;
+    height: 35px;
+    border-radius: 10%;
+    justify-content: center;  
+    align-items: center;
+    margin: 0 1rem;  
+    box-shadow: var(--bs);
+    }
+
+
+.social-list__link:hover,
+.social-list__item:hover {
+    opacity: .5;
+}
+
+
+
+/*about me section*/
+
+.about-me {
+    position: relative;
+    padding: 0 2em 2em;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+.about-me__body{
+    text-indent: 40px;
+    margin-top: 0;
+    margin-bottom: 0 ;
+    padding: 3rem 3rem;
+    font-family: var(--ff-Roboto);
+    background-color: var(--color-blue-1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.section__title--about {
+    display: block; 
+    text-align: center;
+    padding-top: 2rem;
+    
+}
+
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid; 
+        width: 100%;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+
+    .section__title--about {
+        grid-column: 1;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        margin-left: 3rem;
+    }
+
+}
+
+
+
+/*courses and certificates section*/
+
+.courses1 {
+    padding: 0 2em 2em;
+    width: 100%;
+    background-color: var(--color-blue-1);
+    position: relative;
+    margin: 0 auto;
+    padding: 3rem 3rem;
+    font-family: var(--ff-Roboto);
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 0 ;
+}
+
+.section__title--courses {
+    display: block; 
+    padding-top: 3rem;
+    text-align: center;
+}
+
+
+@media (min-width: 600px) {
+    .courses1{
+        padding: 3rem;
+        border-radius: 20px;
+        display: grid; 
+        width: 100%;
+        margin: 0 auto;
+        
+        
+    }
+
+    .section__title--courses {
+        grid-column: 1;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        margin-left: 3rem;
+    }
+}
+
+
+
+/*project section*/
+
+.my-projects {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+    margin-top: 3rem;
+
+        
+}
+
+
+
+.projects, .firstproject{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+
+
+.project__item {   
+    overflow: hidden;
+
+}
+
+.project__img {
+    width: 100%;
+    height: auto;
+}
+
+
+.project__img, .title-image {
+    transition: 
+        transform 750ms cubic-bezier(.5, 0, .5, 1),
+        opacity 250ms linear;
+}
+
+.project__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+.project__img:hover,
+.project__item:focus .project__img {
+    transform: scale(1.2);
+    opacity: .2;
+}
+
+.firstproject {
+    
+    position: relative;
+}
+
+.title-image {
+    position: absolute;
+    top: 150px;
+    right: 50px;
+    left: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--clr-light);
+    overflow: hidden;       
+}
+
+@media (min-width: 600px) {
+    .title-image {
+        position: absolute;
+        top: 150px;
+        right: 50px;
+        left: 50px;
+        font-size: 2em;
+        cursor: pointer;
+        color: var(--clr-light);
+        overflow: hidden;       
+    }
+}
+
+
+/*footer section*/
+
+.footer {
+    text-align: center;
+}
+
+
+/* Individual portfolio item styles */
+
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.portfolio-item-image {
+    width: 300px;
+    
+}
+
+@media (min-width: 600px) {
+    .portfolio-item-individual {
+        width: 100%;
+        font-size: 1.5em;
+        padding: 0 10rem;
+    }
+} 
+
+
+/*for page transition styling*/
+
+.transition-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    background-color: var(--clr-dark);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s ease-out;
+
+}
+
+.transition-1.is-active {
+    opacity: 1;
+    pointer-events: all;
+
+}
+
+.transition-2 {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    bottom: 0;
+    z-index: 101;
+    background-color: var(--clr-dark);
+    transition: 0.5s ease-out;
+
+}
+
+.transition-2.is-active {
+    left: 0px;
+
+
+}
+
+.transition-3 {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 101;
+    background-color: var(--clr-dark);
+    transition: 0.5s ease-out;
+
+}
+
+.transition-3.is-active {
+    top: 0;
+
+
+}

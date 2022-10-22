@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nabila's portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        <script src="https://kit.fontawesome.com/02a3841c0d.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poppins|Source+Code+Pro:400,900|Source+Sans+Pro:300,900|Mali|Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    
+    <body>
+        <div class="transition transition-3 is-active"></div>
+        <div class="controlls">
+            <div class="control home">
+                <a href="index.html#home" class="control__link">
+                    <i class="fas fa-home"></i>
+                </a>
+            </div>
+
+            <div class="control about" >
+                <a href="index.html#about" class="control__link">
+                    <i class="fa-solid fa-info"></i>
+                </a>
+            </div>
+
+            <div class="control courses">
+                <a href="index.html#courses" class="control__link">
+                    <i class="fa-solid fa-scroll"></i>
+                </a>
+            </div>
+            
+            <div class="control about">
+                <a href="index.html#projects" class="control__link">
+                    <i class="fas fa-briefcase"></i>
+                </a>
+            </div>
+
+        </div>
+
+
+        <section class="intro" id="home">  
+            <h1 class="section__title section__title--intro">
+                Identify potential customer 
+                <br>for targeted marketing
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">based on purchase behaviour using supervised machine learning</p>
+            <img src="img/Marketing_target_customer.jpeg" alt="" class="intro__img">  
+        </section>
+        
+        
+        <div class="portfolio-item-individual">
+            <p>This is my capstone project for the Data Star Program.</p>
+            <h3>Introduction and Problem statement</h3>
+            <p>Customer is the most critical aspect of every business and developing marketing strategies to bring in new customers as well as building long-term relationship with existing customers is a common problem 
+                for every business. Through analysing existing customers' data such as their purchase preferences, one can 
+                gain many insights that could help with developing effective targeted marketing strategy that could save cost and time. 
+            </p>
+            <p>This project involves analysing customer's data to identify whether the existing customer is a potential customer or not 
+                in order to optimise advertising for a new product that is launch by company A. Our target variable will be the Potential_Customer column,
+                where 1 is potential customer and 0 is non-potential customer. Only customers classified as 1 will receive advertisements and promotional 
+                discount code for the new product.
+            </p>
+            <p>The analysis comprised of four main stages; understanding of the data, data cleaning, exploratory data analysis (EDA), and classification of customers by building supervised machine learning model.</p>
+            <p>You can find the full project details and code in my github account by clicking the button below.</p>
+        </div>
+                
+        <div class="btn-con__githubproject">
+            <a href="https://github.com/nabilabintiothman/Potential-Customer-Analysis" class="main-btn__resume" target="_blank">
+                <span class="btn-text__githubproject">View full project on </span>
+                <span class="btn-icon__resume"><i class="fa-brands fa-github blackiconcolor"></i></span>
+            </a>
+        </div>
+        
+        <section class="footer" id="footer">
+            <p>Thanks for reading, and feel free to reach out to me.</p>
+            <p>Copyright 2022. All rights reserved!</p>
+        </section>
+
+        <script src ="app.js"></script>
+    </body>
+</html>
