@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nabila's portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        <script src="https://kit.fontawesome.com/02a3841c0d.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poppins|Source+Code+Pro:400,900|Source+Sans+Pro:300,900|Mali|Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    
+    <body>
+        <div class="transition transition-3 is-active"></div>
+        <div class="controlls">
+            <div class="control home">
+                <a href="index.html#home" class="control__link">
+                    <i class="fas fa-home"></i>
+                </a>
+            </div>
+
+            <div class="control about" >
+                <a href="index.html#about" class="control__link">
+                    <i class="fa-solid fa-info"></i>
+                </a>
+            </div>
+
+            <div class="control courses">
+                <a href="index.html#courses" class="control__link">
+                    <i class="fa-solid fa-scroll"></i>
+                </a>
+            </div>
+            
+            <div class="control about">
+                <a href="index.html#projects" class="control__link">
+                    <i class="fas fa-briefcase"></i>
+                </a>
+            </div>
+
+        </div>
+
+
+        <section class="intro" id="home">  
+            <h1 class="section__title section__title--intro">
+                Predicting stroke 
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">based on various risk factors such as age, diseases, and smoking status 
+                <br>using supervised machine learning</p>
+            <img src="img/stroke.jpeg" alt="" class="intro__img">  
+        </section>
+        
+        
+        <div class="portfolio-item-individual">
+            <h3>Introduction</h3>
+            <p>According to the World Health Organization (WHO) stroke is the second leading cause of death globally, 
+                responsible for approximately 11% of total deaths. Stroke happens when blood supply to part of the brain 
+                is blocked or reduced. This causes brain cells to die within minutes as they did not receive the oxygen and 
+                nutrients they critically need to survive. 
+            </p>
+            <p>Many factors can increase the risk of stroke such as:
+                <ul>
+                    <li>being overweight or obese</li>
+                    <li>high blood pressure</li>
+                    <li>cigarette smoking or secondhand smore exposure</li>
+                    <li>diabetes</li>
+                    <li>age; people age 55 or older have a higher risks</li>
+                    <li>gender; men have a higher risk of stroke than women</li>
+                </ul>
+            </p>
+            <h3>Objective</h3>
+            <p>To visualise the relationship between various risk factors with the probability of getting stroke and design a predictive model to determine 
+                whether a patient is likely to get stroke based on risk factors
+                 like gender, age, various diseases, and smoking status.</p>
+            <p>The analysis comprised of four main stages; understanding of the data, data cleaning, exploratory data analysis (EDA), and classification of patients by building supervised machine learning model.
+                I trained 5 classification models which are logistic regression, decision tree, random forest, svc, and knn.
+                Since there is a large class imbalance in our data, I did oversampling using SMOTE. The oversampling and scaling is done within a pipeline to ensure that our sampling techniques don’t have data leakage.
+            </p>
+            <p>You can find the full project details and code in my github account by clicking the button below.</p>
+        </div>
+                
+        <div class="btn-con__githubproject">
+            <a href="https://github.com/nabilabintiothman/Predicting-stroke" class="main-btn__resume" target="_blank">
+                <span class="btn-text__githubproject">View full project on </span>
+                <span class="btn-icon__resume"><i class="fa-brands fa-github blackiconcolor"></i></span>
+            </a>
+        </div>
+        
+        <section class="footer" id="footer">
+            <p>Thanks for reading, and feel free to reach out to me.</p>
+            <p>Copyright 2022. All rights reserved!</p>
+        </section>
+
+        <script src ="app.js"></script>
+    </body>
+</html>
